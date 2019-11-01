@@ -19,7 +19,7 @@ STR - 	strength. how hard the character hits
 
 Player will have 100% chance to hit. Enemy will have 75% chance to hit.
 
-Player can distribute 100 points into either HP or STR.
+Player HP will be 100. STR will be random between 1 and 5.
 
 ####	Things to implement
 
@@ -28,11 +28,11 @@ more stats to include:
 SPD - 	speed. dodge rate
 ACC - 	accuracy. hit rate
 
-(100-(Enemy SPD - Player ACC))% hit
+(100 - (Enemy SPD - Player ACC))% hit
 
-crit chance(?)
+crit chance (?)
 
-level system(?)
+level system (?)
 
 randomly generate enemies relative to player character
 
