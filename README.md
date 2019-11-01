@@ -21,7 +21,7 @@ Player will have 100% chance to hit. Enemy will have 75% chance to hit.
 
 Player can distribute 100 points into either HP or STR.
 
-####Things to implement
+####	Things to implement
 
 more stats to include:
 
