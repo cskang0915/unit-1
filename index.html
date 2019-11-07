@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Challenger</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="main-page">
+		<h1>The Challenger: The Game</h1>
+		<div class="intro">
+			<img class="knight" src="img/knight.png" alt="picture of a knight as the player avatar">
+			<div>
+				<p>Input your name below and see how far you can go.</p>
+				<p>Every round has a new monster that you must defeat.</p>
+			</div>
+		</div>
+		<div class="game-start">
+			<input type="text" placeholder="Challenger Name">
+			<button class="start">Start Round 1</button>
+		</div>
+	</div>
+	<div class="battle-page hidden">
+		<h1>Battle</h1>
+		<div class="game-buttons">
+			<button class="battle">Fight</button>
+			<button class="next-battle hidden">Next battle</button>
+			<button class="stats hidden">Show stats</button>
+		</div>
+		<div class="battle-background">
+			<div class="battle-content">
+				<div class="knight-character">
+					<img class="knight new-knight" src="img/knight.png" alt="picture of a knight as the player avatar">
+					<div class="max-HP">
+						<div class="knight-current-HP current-HP">
+							
+						</div>
+					</div>
+				</div>
+				<div class="orc-character">
+					<img class="orc" src="img/orc.png" alt="picture of an orc as the enemy">
+					<div class="max-HP">
+						<div class="orc-current-HP current-HP">
+	<!-- 						<p>test</p> -->
+						</div>
+					</div>
+				</div>
+				
+				<aside class="battle-log">
+					<ul class="log-list">
+					</ul>			
+				</aside>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="player-win hidden">
+		<h1>Player wins</h1>
+		<button class="next-battle">Next battle</button>
+		<img class="knight center" src="img/knight.png" alt="picture of a knight as the player avatar">		
+	</div>
+	<div class="monster-win hidden">
+		<h1>Monster wins</h1>
+		<button class="stats">Show stats</button>
+		<img class="orc center" src="img/orc.png" alt="picture of an orc as the enemy">
+	</div> -->
+</body>
+<script src="app.js"></script>
+</html>
