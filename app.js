@@ -2,6 +2,8 @@ let roundNumber = 1
 let fightNumber = 1
 let playerCharacter
 let computerCharacter
+let start = 0
+let time = 70
 
 let mainPage = document.querySelector('.main-page')
 let battlePage = document.querySelector('.battle-page')
@@ -30,9 +32,9 @@ let Character = function(input){
 
 Character.prototype.createName = function(){
 	if(this.type == 'computer'){
-		this.name = 'orc'
+		this.name = 'orc'.toUpperCase()
 	}else {
-		this.name = this.type
+		this.name = this.type.toUpperCase()
 		this.type = 'player'
 	}
 }
@@ -55,15 +57,31 @@ Character.prototype.createSTR = function(){
 	}
 }
 
-// let playerCharacter = new Character('beta tester')
-// let computerCharacter = new Character('computer')
-// // let computerCharacterTwo = new Character('computer')
-// console.log(playerCharacter)
-// console.log(computerCharacter)
+// let typeWriter = function(text, element, time){
+// 	console.log('run')
+// 	if(start < text.length){
+// 		element.innerHTML += text.charAt(start)
+// 		start++
+// 		setTimeout(function(){
+// 			typeWriter(text, element, time)
+// 		}, time)
+// 	}
+// }
 
 let createListElement = function(text){
 	let list = document.createElement('li')
 	list.innerText = text
+	// console.log(text)
+	// typeWriter(text, list, time)
+	// let test = function(){
+	// 	if(start < text.length){
+	// 		list.innerHTML += text.charAt(start)
+	// 		start++
+	// 		setTimeout(test, time)
+	// 	}
+	// }
+	// console.log(list)
+
 	return list
 }
 
@@ -74,14 +92,14 @@ let fight = function(playerOne, playerTwo){
 		if(playerTwo.HP > 0){
 			let playerTwoMaxHP = playerTwo.maxHP
 			let playerTwoPercentageHP = calculateHP(newPlayerTwoHP, playerTwoMaxHP)
-			console.log(playerTwoPercentageHP)
+			// console.log(playerTwoPercentageHP)
 			orcHPBar.style.width = `${playerTwoPercentageHP}%`
-			logList.append(createListElement((`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`)))
+			logList.append(createListElement(`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`))
 			// logList.append(createListElement((`${playerTwo.name} has ${playerTwo.HP} left.`)))
 			logList.scrollTop = 1000
 		}else {
-			logList.append(createListElement((`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`)))
-			logList.append(createListElement((`${playerTwo.name} has been defeated! ${playerOne.name} wins.`)))
+			logList.append(createListElement(`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`))
+			logList.append(createListElement(`${playerTwo.name} has been defeated! ${playerOne.name} wins.`))
 			logList.scrollTop = 1000
 			// battlePage.classList.toggle('hidden')
 			// playerWin.classList.toggle('hidden')
@@ -102,14 +120,14 @@ let fight = function(playerOne, playerTwo){
 			if(playerTwo.HP > 0){
 				let playerTwoMaxHP = playerTwo.maxHP
 				let playerTwoPercentageHP = calculateHP(newPlayerTwoHP, playerTwoMaxHP)
-				console.log(playerTwoPercentageHP)
+				// console.log(playerTwoPercentageHP)
 				knightHPBar.style.width = `${playerTwoPercentageHP}%`
-				logList.append(createListElement((`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`)))
+				logList.append(createListElement(`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`))
 				// logList.append(createListElement((`${playerTwo.name} has ${playerTwo.HP} left.`)))
 				logList.scrollTop = 1000
 			}else {
-				logList.append(createListElement((`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`)))
-				logList.append(createListElement((`${playerTwo.name} has been defeated! ${playerOne.name} wins.`)))
+				logList.append(createListElement(`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`))
+				logList.append(createListElement(`${playerTwo.name} has been defeated! ${playerOne.name} wins.`))
 				logList.scrollTop = 1000
 				playerName.value = ''
 				// battlePage.classList.toggle('hidden')
@@ -184,8 +202,8 @@ let calculateHP = function(value, total){
 document.querySelector('.start').addEventListener('click', function(){
 	playerCharacter = new Character(playerName.value)
 	computerCharacter = new Character('computer')
-	console.log(playerCharacter)
-	console.log(computerCharacter)
+	// console.log(playerCharacter)
+	// console.log(computerCharacter)
 	let knightHP = calculateHP(playerCharacter.HP, playerCharacter.maxHP)
 	let orcHP = calculateHP(computerCharacter.HP, computerCharacter.maxHP)
 	knightHPBar.style.width = `${knightHP}%`
@@ -195,7 +213,7 @@ document.querySelector('.start').addEventListener('click', function(){
 	battleButton.addEventListener('click', function() {
 		round(playerCharacter, computerCharacter)
 	})
-	console.log('Game start')
+	// console.log('Game start')
 })
 
 // newButton.addEventListener('click', round(playerCharacter, computerCharacter))
