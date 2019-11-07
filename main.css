@@ -2,8 +2,8 @@ html {
 	background-color: black;
 	color: white;
 	font-family: 'Roboto Mono', monospace;
-	background-image: url('img/dungeon.jpg');
-	background-size: cover;
+	/* background-image: url('img/dungeon.jpg');
+	background-size: cover; */
 }
 
 h1 {
