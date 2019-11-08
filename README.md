@@ -1,5 +1,9 @@
 #	The Game
 
+##	Link to the Game
+
+https://pages.git.generalassemb.ly/ekcs0915/project-one-the-game/
+
 ##	Wire Frame
 
 https://imgur.com/a/Pp9ZxPq

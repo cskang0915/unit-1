@@ -23,6 +23,9 @@ let statsButton = document.querySelector('.stats')
 let knightHPBar = document.querySelector('.knight-current-HP')
 let orcHPBar = document.querySelector('.orc-current-HP')
 
+let knightStatus = document.querySelector('.knight-stats')
+let orcStatus = document.querySelector('.orc-stats')
+
 let Character = function(input){
 	this.type = input,
 	this.createName(),
@@ -95,6 +98,7 @@ let fight = function(playerOne, playerTwo){
 			// console.log(playerTwoPercentageHP)
 			orcHPBar.style.width = `${playerTwoPercentageHP}%`
 			logList.append(createListElement(`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`))
+			orcStatus.lastChild.innerText = (`Enemy HP: ${playerTwo.HP}`)
 			// logList.append(createListElement((`${playerTwo.name} has ${playerTwo.HP} left.`)))
 			logList.scrollTop = 1000
 		}else {
@@ -123,6 +127,7 @@ let fight = function(playerOne, playerTwo){
 				// console.log(playerTwoPercentageHP)
 				knightHPBar.style.width = `${playerTwoPercentageHP}%`
 				logList.append(createListElement(`${playerOne.name} hit ${playerTwo.name} for ${playerOne.STR} damage!`))
+				knightStatus.lastChild.innerText = (`Player HP: ${playerTwo.HP}`)
 				// logList.append(createListElement((`${playerTwo.name} has ${playerTwo.HP} left.`)))
 				logList.scrollTop = 1000
 			}else {
@@ -157,6 +162,7 @@ let newMonster = function(){
 	computerCharacter = new Character('computer')
 	let orcHP = calculateHP(computerCharacter.HP, computerCharacter.maxHP)
 	orcHPBar.style.width = `${orcHP}%`
+	orcStatus.children[1].innerText = (`Enemy STR: ${computerCharacter.STR}`)
 	orcCharacter.classList.toggle('defeated')
 	battleButton.classList.toggle('hidden')
 	nextBattleButton.classList.toggle('hidden')
@@ -208,6 +214,12 @@ document.querySelector('.start').addEventListener('click', function(){
 	let orcHP = calculateHP(computerCharacter.HP, computerCharacter.maxHP)
 	knightHPBar.style.width = `${knightHP}%`
 	orcHPBar.style.width = `${orcHP}%`
+	knightStatus.append(createListElement(`Player Name: ${playerCharacter.name}`))
+	knightStatus.append(createListElement(`Player STR: ${playerCharacter.STR}`))
+	knightStatus.append(createListElement(`Player HP: ${playerCharacter.HP}`))
+	orcStatus.append(createListElement(`Enemy Name: ${computerCharacter.name}`))
+	orcStatus.append(createListElement(`Enemy STR: ${computerCharacter.STR}`))
+	orcStatus.append(createListElement(`Enemy HP: ${computerCharacter.HP}`))
 	mainPage.classList.toggle('hidden')
 	battlePage.classList.toggle('hidden')
 	battleButton.addEventListener('click', function() {

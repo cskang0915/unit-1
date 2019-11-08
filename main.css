@@ -1,3 +1,7 @@
+/* * {
+	border: 1px solid white;
+} */
+
 html {
 	background-color: black;
 	color: white;
@@ -26,10 +30,12 @@ h1 {
 
 .knight-character {
 	width: 33%;
+	margin-bottom: 10%
 }
 
 .orc-character {
 	width: 33%;
+	margin-bottom: 10%;
 }
 
 .knight {
@@ -89,7 +95,7 @@ h1 {
 .battle-content {
 	display: flex;
 	justify-content: space-evenly;
-	margin-top: 10%;
+	margin-top: 7%;
 }
 
 /* .battle-page {
@@ -102,19 +108,23 @@ h1 {
 	padding-left: 100px;
 }
 
+.knight-stats {
+	list-style: none;
+	text-align: center;
+	padding: 0px;
+}
+
+.orc-stats {
+	list-style: none;
+	text-align: center;
+	padding: 0px;
+}
+
 .log-list {
 	list-style: none;
 	padding: 0px;
 	overflow: auto;
 	height: 400px;
-}
-
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 100px;
-	margin-top: 5%;
 }
 
 .current-HP {
